@@ -93,19 +93,19 @@ public class Part1Main {
 	}
 
 	public static <E> MySet<E>[] setsFij(Integer[][][] datasets, int m, int n, String set) {
-		MySet<E>[] set1Obj = (MySet<E>[]) new MySet[n];
+		MySet<E>[] set1Obj = (MySet<E>[]) new MySet[m];
 
 		try {
 			MySet<E> eSet;
-			for (int j = 0; j < n; j++) {
+			for (int j = 0; j < m; j++) {
 				if (set.equals("Set1")) {
 					eSet = (Set1<E>) new Set1<>();
 				} else
 					eSet = (Set2<E>) new Set2<>();
 
-				for (int i = 0; i < m; i++) {
-					for (int k = 0; k < datasets[j][i].length; k++) {
-						eSet.add((E) datasets[j][i][k]);
+				for (int i = 0; i < n; i++) {
+					for (int k = 0; k < datasets[i][j].length; k++) {
+						eSet.add((E) datasets[i][j][k]);
 					}
 				}
 				set1Obj[j] = eSet;
@@ -120,7 +120,7 @@ public class Part1Main {
 
 	public static <E> void printSets(int n, int m, MySet<E>[] t) {
 		System.out.println("Sets Fij are: ");
-		for (int i = 0; i < n; i++)
+		for (int i = 0; i < m; i++)
 
 			printArray(t[i].toArray());
 	}

@@ -33,7 +33,7 @@ public class Strategy1<E> extends AbstractStrategiesTimeCollection<E> {
 			MySet<E> eSet;
 			for (int j = 0; j < data.length; j++) {
 
-				if (this.strategyToInspect instanceof p1p2Solution && this.stratName.equals("P1"))
+				if (this.stratName.equals("P1"))
 					eSet = (Set1<E>) new Set1<>();
 				else 
 					eSet = (Set2<E>) new Set2<>(); 
